@@ -4,7 +4,7 @@
  * @memberOf 组件类型，例如：数据输入
  * @description 描述你的组件。
  * @author 物料作者
- * @package arco-pro-watermark
+ * @package arco-pro-utils
  */
 
 /**

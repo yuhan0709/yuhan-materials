@@ -6,8 +6,8 @@ module.exports = {
   node: (config) => {
     config = jest.node(config) || config;
     config.moduleNameMapper = {
-      '^arco-pro-watermark/(.+)$': '<rootDir>/$1',
-      '^arco-pro-watermark$': '<rootDir>',
+      '^arco-pro-utils/(.+)$': '<rootDir>/$1',
+      '^arco-pro-utils$': '<rootDir>',
     };
   },
   /**
@@ -16,8 +16,8 @@ module.exports = {
   client: (config) => {
     config = jest.client(config) || config;
     config.moduleNameMapper = {
-      '^arco-pro-watermark/(.+)$': '<rootDir>/$1',
-      '^arco-pro-watermark$': '<rootDir>',
+      '^arco-pro-utils/(.+)$': '<rootDir>/$1',
+      '^arco-pro-utils$': '<rootDir>',
     };
   },
 };
