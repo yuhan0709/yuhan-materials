@@ -44,5 +44,9 @@
     "lib",
     "dist",
     "docs"
-  ]
+  ],
+  "dependencies": {
+    "classnames": "^2.3.1",
+    "lodash.omit": "^4.5.0"
+  }
 }

@@ -1,4 +1,5 @@
 {
+  "root": true,
   "env": {
     "browser": true,
     "commonjs": true,
@@ -7,7 +8,12 @@
     "jest": true
   },
   "parser": "@typescript-eslint/parser",
-  "extends": ["plugin:@typescript-eslint/recommended", "airbnb", "plugin:prettier/recommended"],
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
@@ -15,7 +21,7 @@
     },
     "sourceType": "module"
   },
-  "plugins": ["react", "babel"],
+  "plugins": ["react", "babel", "@typescript-eslint/eslint-plugin", "eslint-plugin-tsdoc"],
   "globals": {
     "ActiveXObject": false,
     "describe": false,
@@ -26,6 +32,15 @@
     "afterEach": false,
     "beforeEach": false
   },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": [2, { "args": "none" }],
+        "@typescript-eslint/no-use-before-define": [2, { "functions": false, "classes": false }]
+      }
+    }
+  ],
   "rules": {
     "prettier/prettier": ["error", { "trailingComma": "es5", "printWidth": 100 }],
     "linebreak-style": ["error", "unix"],
@@ -34,7 +49,6 @@
     "no-param-reassign": 0,
     "no-underscore-dangle": 0,
     "no-useless-constructor": 0,
-    "no-use-before-define": ["error", { "functions": false, "classes": false }],
     "no-unused-vars": [2, { "vars": "all", "args": "none" }],
     "no-restricted-syntax": 0,
     "no-unused-expressions": ["error", { "allowShortCircuit": true, "allowTernary": true }],
@@ -87,6 +101,10 @@
     "jsx-a11y/alt-text": 0,
     "jsx-a11y/label-has-for": 0,
     "jsx-a11y/label-has-associated-control": 0,
+    "jsx-a11y/no-noninteractive-tabindex": 0,
+    "jsx-a11y/tabindex-no-positive": 0,
+    "react/jsx-indent": 0,
+    "react/display-name": 0,
     "react/no-multi-comp": 0,
     "react/destructuring-assignment": 0,
     "react/no-access-state-in-setstate": 0,
@@ -94,16 +112,20 @@
     "react/require-default-props": 0,
     "react/jsx-wrap-multilines": 0,
     "react/no-render-return-value": 0,
-    "react/jsx-props-no-spreading": 0,
     "array-callback-return": 0,
     "no-cond-assign": 0,
     "@typescript-eslint/explicit-function-return-type": 0,
-    "@typescript-eslint/no-use-before-define": 0,
+    "no-use-before-define": 0,
+    "@typescript-eslint/no-use-before-define": 2,
     "@typescript-eslint/no-var-requires": 0,
     "@typescript-eslint/no-empty-function": 0,
     "no-shadow": 0,
     "no-continue": 0,
     "no-loop-func": 0,
-    "prefer-spread": 0
+    "prefer-spread": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "tsdoc/syntax": "warn",
+    "no-undef": 0
   }
 }

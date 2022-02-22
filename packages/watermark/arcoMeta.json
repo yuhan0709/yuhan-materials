@@ -1,0 +1,22 @@
+{
+  "name": "arco-pro-watermark",
+  "title": "前端明水印",
+  "description": "可给某个区域加上水印表示版权等",
+  "type": "react-component",
+  "category": [],
+  "group": 0,
+  "homepage": "",
+  "repository": "",
+  "author": "yuhan0709",
+  "screenshot": "",
+  "package": {
+    "name": "arco-pro-watermark",
+    "version": "latest",
+    "type": "npm",
+    "registry": "",
+    "peerDependencies": [
+      "react",
+      "react-dom"
+    ]
+  }
+}
