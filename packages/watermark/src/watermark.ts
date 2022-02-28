@@ -34,7 +34,6 @@ const getIdentifyDom = (container: Element) => {
   for (let i = 0; i < children.length; i++) {
     if (children[i].nodeType === Node.ELEMENT_NODE) {
       const currentDom = children[i] as Element;
-      console.log(currentDom);
       if (currentDom.getAttribute(identify) === identify) {
         return currentDom;
       }
