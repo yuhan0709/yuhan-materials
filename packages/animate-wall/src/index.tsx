@@ -10,11 +10,11 @@ interface AnimateWallProps {
   /**
    * @zh 开始动画的回调，入参是当前开始动画的元素索引
    */
-  onStart: (index: number) => void;
+  onStart?: (index: number) => void;
   /**
    * @zh 动画完成的回调
    */
-  onComplete: (index: number) => void;
+  onComplete?: (index: number) => void;
   /**
    * @zh 动画墙的元素数组。传入的是一个组件而不是render后的结果， 最少需要传入 `2` 个元素，一直进行替换
    */
@@ -38,6 +38,7 @@ interface AnimateWallProps {
   atomSelector?: string;
   /**
    * @zh 这个动画墙所展示的元素个数，默认是 `elementList.length - 1`
+   * @defaultValue elementList.length - 1
    */
   count?: number;
 }

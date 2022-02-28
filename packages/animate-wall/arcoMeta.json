@@ -14,6 +14,6 @@
     "version": "latest",
     "type": "npm",
     "registry": "",
-    "peerDependencies": ["@arco-design/web-react", "react", "react-dom", "gsap"]
+    "peerDependencies": ["@arco-design/web-react", "react", "react-dom"]
   }
 }
