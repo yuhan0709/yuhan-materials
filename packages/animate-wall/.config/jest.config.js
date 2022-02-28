@@ -6,8 +6,8 @@ module.exports = {
   node: (config) => {
     config = jest.node(config) || config;
     config.moduleNameMapper = {
-      '^arco-animation-icons-wall/(.+)$': '<rootDir>/$1',
-      '^arco-animation-icons-wall$': '<rootDir>',
+      '^arco-animate-wall/(.+)$': '<rootDir>/$1',
+      '^arco-animate-wall$': '<rootDir>',
     };
   },
   /**
@@ -16,8 +16,8 @@ module.exports = {
   client: (config) => {
     config = jest.client(config) || config;
     config.moduleNameMapper = {
-      '^arco-animation-icons-wall/(.+)$': '<rootDir>/$1',
-      '^arco-animation-icons-wall$': '<rootDir>',
+      '^arco-animate-wall/(.+)$': '<rootDir>/$1',
+      '^arco-animate-wall$': '<rootDir>',
     };
   },
 };

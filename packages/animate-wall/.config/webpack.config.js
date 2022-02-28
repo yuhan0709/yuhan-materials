@@ -16,8 +16,8 @@ module.exports = (config) => {
       typeof webpack === 'function'
         ? webpack
         : typeof webpack.component === 'function'
-          ? webpack.component
-          : () => {};
+        ? webpack.component
+        : () => {};
     config = commonConfig(config) || config;
   }
 

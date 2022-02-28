@@ -1,6 +1,6 @@
 {
-  "name": "arco-animation-icons-wall",
-  "version": "0.0.9",
+  "name": "arco-animate-wall",
+  "version": "0.1.0",
   "description": "arco 官网动态出现隐藏图标墙",
   "main": "./lib/index.js",
   "module": "./es/index.js",
@@ -25,9 +25,9 @@
     "preview": "arco preview"
   },
   "peerDependencies": {
+    "@arco-design/web-react": ">=2.0.0",
     "react": ">=16",
-    "react-dom": "^16.0.1",
-    "@arco-design/web-react": ">=2.0.0"
+    "react-dom": "^16.0.1"
   },
   "sideEffects": [
     "dist/**/*",
@@ -45,5 +45,10 @@
     "lib",
     "dist",
     "docs"
-  ]
+  ],
+  "dependencies": {
+    "classnames": "^2.3.1",
+    "gsap": "^3.9.1",
+    "lodash.shuffle": "^4.2.0"
+  }
 }
