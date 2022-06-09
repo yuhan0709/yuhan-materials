@@ -1,37 +1,74 @@
-import React, { ReactNode } from 'react';
-import { Button, Tooltip } from '@arco-design/web-react';
-import { ButtonProps } from '@arco-design/web-react/es/Button';
+import { InputProps } from '@arco-design/web-react';
+import InputCode from './inputCode';
 
 /**
- * @title TooltipButton
+ * @title InputCode
  */
-export interface TooltipButtonProps {
-  children?: any;
+export interface InputCodeProps {
   /**
-   * @zh 按钮的标题
-   * @defaultValue `Hello Arco`
-   * @version 1.0.0
+   * @zh 输入框的个数，`value.length > 0` 的情况下会采用 `value` 的 length
+   * @defaultValue 6
    */
-  title?: ReactNode;
+  length?: number;
   /**
-   * @zh 按钮的提示
+   * @zh 输入框之间的分隔符，会在索引为 `index` 的输入框后渲染分隔符。
    */
-  btnProps?: ButtonProps;
+  renderSplit?: (index) => React.ReactNode;
+  /**
+   * @zh 值变化时的回调
+   */
+  onChange?: (value: string[], index: number) => void;
+  /**
+   * @zh 值清空时的回调
+   */
+  onClear: () => void;
+  /**
+   * @zh 所有输入框都有值时的回调
+   */
+  onComplete?: (value: string[], index: number) => void;
+  /**
+   * @zh 是否禁用
+   */
+  disabled?: boolean;
+  /**
+   * @zh 是否是错误状态
+   */
+  error?: boolean;
+  /**
+   * @zh 是否允许清空
+   */
+  allowClear?: boolean;
+  /**
+   * @zh 值，受控模式
+   */
+  value?: string[];
+  /**
+   * @zh 默认值
+   */
+  defaultValue?: string[];
+  /**
+   * @zh 是否只读
+   */
+  readonly?: boolean;
+  /**
+   * @zh 是否是 password 模式
+   */
+  password?: boolean | { showEyeIcon?: boolean };
+  className?: string | string[];
+  /**
+   * @zh 是否自动聚焦第一个无值的输入框
+   */
+  autoFocus?: boolean;
+  /**
+   * @zh 在某个输入框有值情况下再输入是否覆盖
+   * @defaultValue true
+   */
+  overwrite?: boolean;
+  size?: InputProps['size'];
+  /**
+   * @zh 验证当前输入框的值是否有效
+   */
+  validate?: (code: string, index) => boolean;
 }
 
-const TooltipButton = (props: TooltipButtonProps) => {
-  const { children, title = 'Hello Arco', btnProps } = props;
-  return (
-    <div className="arco-rc-tooltip-button">
-      {title ? (
-        <Tooltip content={title}>
-          <Button {...btnProps}>{children}</Button>
-        </Tooltip>
-      ) : (
-        <Button {...btnProps}>{children}</Button>
-      )}
-    </div>
-  );
-};
-
-export default TooltipButton;
+export default InputCode;
