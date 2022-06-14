@@ -11,7 +11,7 @@ export default () => {
       </div>
       <div>
         <Typography.Text bold>密码模式：</Typography.Text>
-        <VerifyCode />
+        <VerifyCode password />
       </div>
     </Space>
   );
