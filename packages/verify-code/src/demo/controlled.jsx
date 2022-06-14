@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Space, Button } from '@arco-design/web-react';
-import InputCode from 'arco-verify-code';
+import VerifyCode from 'arco-verify-code';
 
 export default () => {
   const [value, setValue] = useState(['0']);
   const codeLength = 8;
 
-  const inputCode = () => {
+  const handleClick = () => {
     setValue((value) => {
       const filteredValue = value.join('').split('');
       if (filteredValue.length < codeLength) {
@@ -19,9 +19,9 @@ export default () => {
   return (
     <Space direction="vertical">
       <div>
-        <InputCode value={value} onChange={setValue} length={codeLength} allowClear />
+        <VerifyCode value={value} onChange={setValue} length={codeLength} allowClear />
       </div>
-      <Button type="primary" onClick={inputCode}>
+      <Button type="primary" onClick={handleClick}>
         填入验证码
       </Button>
     </Space>

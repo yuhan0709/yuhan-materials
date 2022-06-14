@@ -1,3 +1,4 @@
+import React, { CSSProperties } from 'react';
 import { InputProps } from '@arco-design/web-react';
 import InputCode from './inputCode';
 
@@ -54,7 +55,6 @@ export interface InputCodeProps {
    * @zh 是否是 password 模式
    */
   password?: boolean | { showEyeIcon?: boolean };
-  className?: string | string[];
   /**
    * @zh 是否自动聚焦第一个无值的输入框
    */
@@ -69,6 +69,12 @@ export interface InputCodeProps {
    * @zh 验证当前输入框的值是否有效
    */
   validate?: (code: string, index) => boolean;
+  className?: string | string[];
+  style?: CSSProperties;
 }
 
-export default InputCode;
+function VerifyCode(props: InputCodeProps) {
+  return <InputCode {...props} />;
+}
+
+export default VerifyCode;

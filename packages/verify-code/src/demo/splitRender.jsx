@@ -1,15 +1,19 @@
 import React from 'react';
 import { Space } from '@arco-design/web-react';
-import InputCode from 'arco-verify-code';
+import VerifyCode from 'arco-verify-code';
 import { IconMinus } from '@arco-design/web-react/icon';
 
 export default () => {
   return (
     <Space>
-      <InputCode
+      <VerifyCode
         renderSplit={(index) => {
           if (index === 2) {
-            return <IconMinus />;
+            return (
+              <span style={{ color: 'var(--color-text-3)', padding: '0 4px' }}>
+                <IconMinus />
+              </span>
+            );
           }
         }}
       />

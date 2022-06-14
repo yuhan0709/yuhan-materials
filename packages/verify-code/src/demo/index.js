@@ -1,6 +1,6 @@
 /**
  * @file
- * @name 组件名
+ * @name 输入验证码
  * @memberOf 组件类型，例如：数据输入
  * @description 描述你的组件。
  * @author 物料作者
@@ -28,13 +28,19 @@ export { default as SplitRender } from './splitRender';
 export { default as Clear } from './clear';
 
 /**
+ * @name 自定义校验规则
+ */
+
+export { default as Validate } from './validate';
+
+/**
  * @name 受控模式
  */
 
 export { default as Controlled } from './controlled';
 
 /**
- * @name 在 `Form` 中使用
+ * @name 作为表单控件使用
  */
 
 export { default as Form } from './form';

@@ -13,6 +13,7 @@ const trimFn = (value?: string | number) => {
   }
   return '';
 };
+
 const getActiveIndex = (value: string[], length: number) => {
   const lengthValue = new Array(length).fill('').map((_, index) => {
     return value[index] || '';
@@ -34,6 +35,8 @@ function InputCode(props: InputCodeProps) {
     validate,
     size = 'default',
     length = 6,
+    className,
+    style,
   } = props;
 
   const [value, setValue] = useMergeValue(new Array(length).fill(''), {
@@ -57,7 +60,7 @@ function InputCode(props: InputCodeProps) {
     } else {
       lastValue[index] = lastCode;
     }
-    const isValid = validate ? validate(lastValue[index], index) : true;
+    const isValid = validate && trimFn(lastValue[index]) ? validate(lastValue[index], index) : true;
 
     if (isValid) {
       setValue(lastValue);
@@ -79,7 +82,7 @@ function InputCode(props: InputCodeProps) {
   };
 
   const handleComplete = (value: string[], index: number) => {
-    if (value.every((code) => !trimFn(code))) {
+    if (value.every((code) => trimFn(code))) {
       props.onComplete && props.onComplete(value, index);
     }
   };
@@ -155,16 +158,20 @@ function InputCode(props: InputCodeProps) {
   const passwordConfig = password ? (isObject(password) ? password : { showEyeIcon: false }) : {};
   const hasValidValue = value.filter((code) => trimFn(code)).length;
   const InputComponent = password ? Input.Password : Input;
-  const classNames = cs('verify-input-code', {
-    ['verify-input-code-password']: password,
-  });
+  const classNames = cs(
+    'verify-input-code',
+    {
+      ['verify-input-code-password']: password,
+    },
+    className
+  );
 
   const valueWithLength = useMemo(() => {
     return new Array(length).fill('').map((_, index) => value[index]);
   }, [value, length]);
 
   return (
-    <span className={classNames}>
+    <span className={classNames} style={style}>
       {valueWithLength.map((currentValue, index) => {
         const splitDom = renderSplit(index);
         return (
